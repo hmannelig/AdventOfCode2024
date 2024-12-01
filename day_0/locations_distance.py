@@ -60,7 +60,6 @@ def count_occurrence(location_id, data: dict) -> int:
 
 
 def calculate_similarity() -> int:
-
     recorded_locs = {}
     total_similarity = 0
     for n in left_locations:
