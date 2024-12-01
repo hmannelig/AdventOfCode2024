@@ -60,14 +60,12 @@ def count_occurrence(location_id, data: dict) -> int:
 
 
 def calculate_similarity() -> int:
-    sorted_left_locs = sort_ascending(left_locations)
-    sorted_right_locs = sort_ascending(right_locations)
 
     recorded_locs = {}
     total_similarity = 0
-    for n in sorted_left_locs:
+    for n in left_locations:
         if n not in recorded_locs:
-            recorded_locs[n] = count_occurrence(n, sorted_right_locs)
+            recorded_locs[n] = count_occurrence(n, right_locations)
 
         total_similarity += (int(n) * int(recorded_locs[n]))
 
